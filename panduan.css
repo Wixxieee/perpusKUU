@@ -1,0 +1,161 @@
+/* Reset Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    overflow-y: scroll; /* Paksa selalu tampil scroll vertikal */
+}
+
+/* Topbar */
+.topbar {
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.topbar h1 {
+    font-size: 24px;
+    color: white;
+    font-family: 'roboto', sans-serif;
+}
+
+.topbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.topbar nav ul li a {
+    font-size: 18px;
+    font-family: 'montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+    right: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek Hover pada Navigasi */
+.topbar nav ul li a:hover {
+    background-color: #3768a9cb; /* Warna latar belakang saat hover */
+    transform: scale(1.1); /* Efek zoom-in saat hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out; /* Animasi saat muncul */
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Panduan Section */
+.panduan-section {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    padding: 20px;
+    background: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.panduan-text {
+    margin-bottom: 15px;
+}
+
+.panduan-text h3 {
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #1d3557;
+    margin-bottom: 10px;
+}
+
+.panduan-text p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.panduan-text i {
+    font-size: 24px;
+    color: #3768a9;
+    margin-right: 10px;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1d3557;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.back-btn i {
+    margin-right: 10px;
+}
+
+.back-btn:hover {
+    background-color: #457b9d;
+    transform: translateX(-5px);
+}
+
+.logout-button {
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #d32f2f;
+}
+
+.logout-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: 20px;
+}

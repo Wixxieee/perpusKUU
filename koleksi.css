@@ -1,0 +1,352 @@
+/* Umum */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f5f6ff, #f5f6ff);
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow-y: scroll; /* Paksa selalu tampil scroll vertikal */
+}
+
+/* Topbar */
+.topbar {
+    width: 100%;
+    background-color: #2c3e50;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.topbar h1 {
+    font-size: 24px;
+    color: white;
+    font-family: 'roboto', sans-serif;
+}
+
+.topbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.topbar nav ul li a {
+    font-size: 18px;
+    font-family: 'montserrat', sans-serif;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    position: relative;
+    right: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek Hover pada Navigasi */
+.topbar nav ul li a:hover {
+    background-color: #3768a9cb; /* Warna latar belakang saat hover */
+    transform: scale(1.1); /* Efek zoom-in saat hover */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+}
+
+/* Transisi Halus pada Background */
+.topbar nav ul li a {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+    animation: fadeIn 0.5s ease-in-out; /* Animasi saat muncul */
+}
+
+/* Animasi Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Content */
+.content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-form {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form input {
+    padding: 8px 12px;
+    font-size: 16px;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #34495e;
+}
+
+/* Table */
+.book-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    
+}
+
+.book-table th, .book-table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    position: relative;
+}
+
+.book-table th {
+    background-color: #34495e;
+    color: white;
+    position: relative;
+}
+
+.book-table tr:hover {
+    background-color: #f4f4f4;
+}
+
+.book-table .edit-btn, .book-table .delete-btn {
+    padding: 6px 12px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.book-table .edit-btn {
+    background-color: #28a745;
+}
+
+.book-table .delete-btn {
+    background-color: #dc3545;
+}
+
+.book-table .edit-btn:hover {
+    background-color: #218838;
+}
+
+.book-table .delete-btn:hover {
+    background-color: #c82333;
+}
+
+/* Add Book Button */
+.add-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #34495e;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.add-btn:hover {
+    background-color: #34495e;
+}
+
+/* Modal */
+.modal {
+    display: none; /* Secara default tersembunyi */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6); /* Background semi-transparan lebih gelap */
+    animation: fadeInUp 0.4s ease-out;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: white;
+    margin: 5% auto; /* Margin untuk memposisikan modal lebih baik di tengah */
+    padding: 30px; /* Padding lebih besar untuk memberi ruang */
+    width: 60%; /* Lebih lebar dari sebelumnya */
+    max-width: 800px; /* Maksimal lebar 800px */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan halus untuk efek */
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 32px; /* Lebih besar agar mudah diklik */
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #e74c3c; /* Warna merah saat hover untuk kontras */
+    cursor: pointer;
+}
+
+/* Form Input */
+input[type="text"], input[type="number"], select, textarea {
+    width: 100%; /* Membuat input lebih lebar */
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+    border-color: #34495e;
+    outline: none;
+}
+
+/* Button */
+button[type="submit"] {
+    padding: 12px 25px;
+    font-size: 18px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #34495e;
+}
+
+/* Label */
+label {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Header Modal */
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Modal Overlay Background */
+.modal-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999; /* Membuat latar belakang modal di atas konten lainnya */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Tombol Logout */
+.logout-button {
+    color: white;
+    font-weight: 600;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #d32f2f;
+}
+
+.logout-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(211, 47, 47, 0.3);
+}
+
+.logout-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Footer */
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi umum untuk elemen yang masuk */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Animasi Scale Up untuk Efek Masuk */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
